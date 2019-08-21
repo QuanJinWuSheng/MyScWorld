@@ -1,0 +1,33 @@
+
+server:
+  port: 8761
+spring:
+  application:
+    name: eureka1
+  profiles: jqsc1
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaul-zone: http://jqsc1:8761/eureka/
+  instance:
+    hostname: jqsc1
+---
+server:
+  port: 8762
+spring:
+  application:
+    name: eureka2
+  profiles: jqsc2
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaul-zone: http://jqsc2:8762/eureka/
+  instance:
+    hostname: jqsc2
+
+my:
+  value: myValue
